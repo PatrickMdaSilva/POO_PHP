@@ -1,0 +1,16 @@
+{
+    "name": "patrick/phpoo",
+    "autoload": {
+        "psr-4": {
+            "app\\":"app"
+        }
+    },
+    "authors": [
+        {
+            "name": "PatrickMdaSilva",
+            "email": "patrick15k@hotmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
