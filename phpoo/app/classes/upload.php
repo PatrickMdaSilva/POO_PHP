@@ -1,12 +1,24 @@
 <?php
 
 namespace app\classes;
+use app\traits\ValidationFile;
 
-class Upload{
+abstract class Upload{
+
+    use ValidationFile;
     
-    public $teste;
+    private $file;
 
-    public function teste(){
-        return "teste";
+    public function __construct($file){
+        $this->file = $file;
+    }
+
+    protected function extension(){
+        return pathinfo($this->file, PATHINFO_EXTENSION);
+    }
+
+    protected function rename(){
+        $uniqId = uniqid(true);
+        return $uniqId . '.' . $this->extension();
     }
 }

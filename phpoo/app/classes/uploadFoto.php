@@ -2,28 +2,16 @@
 
 namespace app\classes;
 
-
+use app\traits\ValidationFile;
 
 class UploadFoto extends Upload{ // extensão da mesma familia de classes
 
-    public $file;
-    public $newName;
-    public $extensions = ['png', 'jpg'];
 
-    public function __construct($file){
-        $this->file = $file;
-    }
 
-    public function extension(){
-        return pathinfo($this->file, PATHINFO_EXTENSION);
-    }
+    protected $extensions = ['png', 'jpg'];
 
-    public function rename(){
-        $uniqId = uniqid(true);
-        $this->newName = $uniqId . '.' . $this->extension();
+    protected function upload(){
+        return $this->teste();
     }
-
-    public function upload(){
-        return $this->newName;
-    }
+    
 }

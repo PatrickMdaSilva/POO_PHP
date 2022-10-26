@@ -2,15 +2,18 @@
 
 require ("vendor/autoload.php");
 
+
 Use app\classes\UploadFoto;
 
-$upload = new UploadFoto("foto.png");
+$upload = new UploadFoto("arquivo.png");
 
-echo $upload->teste();
+
+//echo $upload->teste();
 //$upload->extension();
 //$upload->rename();
-//echo $upload->upload();
-//echo "<br>";
+$upload->validation();
+echo $upload->upload();
+echo "<br>";
 
 
 
